@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      <h2>welcome to game hub</h2>
+      <h2 className=''>welcome to game hub</h2>
+      
     </>
   )
 }
