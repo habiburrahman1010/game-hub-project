@@ -42,7 +42,7 @@ const BannerSlider = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="h-[400px] md:h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-center text-white"
+              className="h-[600px] md:h-[500px] bg-cover bg-center flex flex-col items-center justify-center "
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               

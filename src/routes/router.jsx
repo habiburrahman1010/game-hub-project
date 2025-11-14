@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from '../layouts/HomeLayout';
 import Home from '../pages/Home';
+import AllGame from '../pages/AllGame';
 
 const router =createBrowserRouter([
     {
@@ -11,6 +12,11 @@ const router =createBrowserRouter([
             {
                 path:"",
                 element:<Home></Home>
+            },
+            {
+                path:"/all-game",
+                element:<AllGame></AllGame>,
+                loader:()=>fetch('/game.json'),
             }
 
         ]
