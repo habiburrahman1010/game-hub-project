@@ -60,7 +60,8 @@ const Navbar = () => {
                 </div>
 
                 {/* Right Button */}
-                <div className="navbar-end">
+                <div className="navbar-end flex gap-3">
+                  <Link to={"/my-profile"}>    <img className='w-12 rounded-full' src={`${user ? user.photoURL : ""}`} alt="" /></Link>
                   {
                     user ? <button onClick={handleLogout} className='btn btn-primary px-5'>Logout</button> : <Link to='/auth/login' className='btn btn-primary px-5'>Login</Link>
                 }

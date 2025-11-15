@@ -10,6 +10,7 @@ import GameDetails from '../pages/GameDetails';
 import PrivetRoute from '../provider/PrivetRoute';
 import Loading from '../pages/Loading';
 import Error from '../pages/Error';
+import Myprofile from '../pages/Myprofile';
 
 const router =createBrowserRouter([
     {
@@ -51,6 +52,11 @@ const router =createBrowserRouter([
         </PrivetRoute>,
         loader:()=>fetch("/game.json"),
           hydrateFallbackElement:<Loading></Loading>
+    },
+    {
+        path:"/my-profile",
+        element:<Myprofile></Myprofile>
+
     },
     {
         path:'/*',

@@ -4,16 +4,21 @@ import { AuthContex } from "../provider/AuthProvider";
 
 const Register = () => {
   const [error, setError] = useState("");
-  const { createUser } = useContext(AuthContex);
+  const { createUser, updateUser, setUser } = useContext(AuthContex);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const terms = e.target.terms.checked;
 
-    // Password REGEX
+    const form = e.target;
+
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const terms = form.terms.checked;
+
+    // REGEX: 6+ characters, 1 uppercase, 1 lowercase
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
     if (!terms) {
@@ -23,47 +28,86 @@ const Register = () => {
 
     if (!passwordRegex.test(password)) {
       setError(
-        "Password must be at least 6 characters and include uppercase & lowercase letters"
+        "Password must have 6+ characters, 1 uppercase, and 1 lowercase letter"
       );
       return;
     }
 
     setError("");
 
-    createUser(email, password)
-      .then(() => {
-        e.target.reset();
-        navigate("/auth/login"); // redirect to login
-      })
-      .catch((err) => setError(err.message));
-  };
+      createUser(email,password)
+        .then(result=>{
+            const user=result.user;
+          //  console.log(user)
+          updateUser({displayName:name, photoURL:photo}).then(()=>{
+             setUser({...user,displayName:name, photoURL:photo})
+             navigate("/")
+            
+          })
+          .catch((error)=>{
+            console.log(error);
+            setUser(user)
+
+            
+          })
+
+       
+
+        })
+         .catch((error) => {
+   // const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+  });}
 
   return (
     <div className="hero bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
-
         <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
           <div className="card-body">
 
             <form onSubmit={handleRegister}>
+              {/* Name */}
+              <label className="label">Name</label>
+              <input
+                type="text"
+                name="name"
+                className="input input-bordered"
+                placeholder="Your Name"
+                required
+              />
+
+              {/* Photo URL */}
+              <label className="label">Photo URL</label>
+              <input
+                type="text"
+                name="photo"
+                className="input input-bordered"
+                placeholder="Photo URL"
+                required
+              />
+
+              {/* Email */}
               <label className="label">Email</label>
               <input
                 type="email"
-                className="input input-bordered"
                 name="email"
+                className="input input-bordered"
                 placeholder="Email"
                 required
               />
 
+              {/* Password */}
               <label className="label">Password</label>
               <input
                 type="password"
-                className="input input-bordered"
                 name="password"
+                className="input input-bordered"
                 placeholder="Password"
                 required
               />
 
+              {/* Terms */}
               <div className="mt-2">
                 <label className="label cursor-pointer">
                   <input type="checkbox" name="terms" className="checkbox" />
@@ -71,15 +115,17 @@ const Register = () => {
                 </label>
               </div>
 
+              {/* Submit */}
               <button type="submit" className="btn btn-neutral mt-4 w-full">
                 Register
               </button>
             </form>
 
+            {/* Error message */}
             {error && <p className="text-red-500 mt-2">{error}</p>}
 
             <p className="mt-4">
-              Already have an account?{" "}
+              Already have an account?
               <Link to="/auth/login" className="text-blue-400 underline">
                 Login
               </Link>
@@ -87,7 +133,6 @@ const Register = () => {
 
           </div>
         </div>
-
       </div>
     </div>
   );
