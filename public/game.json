@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "Player Unknown's Battlegrounds (PUBG)",
-    "coverPhoto": "https://i.ibb.co/6Pbd0pB/pubg.jpg",
+    "coverPhoto": "https://i.ibb.co.com/chqpCSqJ/pubg.png",
     "category": "Battle Royale",
     "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
     "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
@@ -12,7 +12,7 @@
   {
     "id": "2",
     "title": "Call of Duty: Mobile",
-    "coverPhoto": "https://i.ibb.co/NrrVwG2/codm.jpg",
+    "coverPhoto": "https://i.ibb.co.com/cc09LhSq/images.png",
     "category": "FPS",
     "downloadLink": "https://www.callofduty.com/mobile",
     "description": "Call of Duty: Mobile delivers iconic multiplayer maps and modes, fast-paced combat, and battle royale action.",
@@ -32,7 +32,7 @@
   {
     "id": "4",
     "title": "Valorant",
-    "coverPhoto": "https://i.ibb.co/2c1XcLg/valorant.jpg",
+    "coverPhoto": "https://i.ibb.co.com/YBQQ6DPv/download.jpg",
     "category": "Tactical Shooter",
     "downloadLink": "https://playvalorant.com/",
     "description": "Valorant is a 5v5 tactical shooter blending precise gunplay and unique agent abilities.",
@@ -42,7 +42,7 @@
   {
     "id": "5",
     "title": "Among Us",
-    "coverPhoto": "https://i.ibb.co/k4SYx8T/amongus.jpg",
+    "coverPhoto": "https://i.ibb.co.com/F448rYF8/hq720.png",
     "category": "Party Game",
     "downloadLink": "https://www.innersloth.com/games/among-us/",
     "description": "A fun social deduction game where crewmates must complete tasks while impostors try to sabotage them.",
@@ -62,7 +62,7 @@
   {
     "id": "7",
     "title": "Apex Legends",
-    "coverPhoto": "https://i.ibb.co/JnQzZCv/apex.jpg",
+    "coverPhoto": "https://i.ibb.co.com/VcdrwN20/download-1.jpg",
     "category": "Battle Royale",
     "downloadLink": "https://www.ea.com/games/apex-legends",
     "description": "A squad-based battle royale game featuring unique legends, each with their own special abilities.",
@@ -72,7 +72,7 @@
   {
     "id": "8",
     "title": "Fortnite",
-    "coverPhoto": "https://i.ibb.co/ZV8Mmrn/fortnite.jpg",
+    "coverPhoto": "https://i.ibb.co.com/pv4nk4CX/download-2.jpg",
     "category": "Battle Royale",
     "downloadLink": "https://www.epicgames.com/fortnite/",
     "description": "A colorful battle royale game where players build, fight, and survive to be the last one standing.",
@@ -82,7 +82,7 @@
   {
     "id": "9",
     "title": "Clash of Clans",
-    "coverPhoto": "https://i.ibb.co/h9bHnLy/clashofclans.jpg",
+    "coverPhoto": "https://i.ibb.co.com/TMQzMZFz/images.jpg",
     "category": "Strategy",
     "downloadLink": "https://supercell.com/en/games/clashofclans/",
     "description": "A strategy game where you build your village, raise a clan, and compete in epic clan wars.",

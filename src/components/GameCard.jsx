@@ -37,7 +37,7 @@ const GameCard = ({ game }) => {
             </p>
 
             {/* Button */}
-            <Link to={`/games/${game.id}`}>
+            <Link to={`/game-details/${game.id}`}>
                 <button
                     className="
   mt-4 w-full bg-gradient-to-r from-orange-700 to-red-500 text-white 
