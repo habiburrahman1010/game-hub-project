@@ -21,8 +21,13 @@ const Navbar = () => {
     const links = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/all-game">All Games</Link></li>
+        
+       {!user && (
+      <>
         <li><Link to="/auth/login">Login</Link></li>
         <li><Link to="/auth/register">Register</Link></li>
+      </>
+    )}
     </>
 
     return (
@@ -49,7 +54,7 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <Link to="/" className="btn btn-ghost text-xl">GAMEHUB</Link>
+                    <Link to="/" className="ml-6 text-xl font-semibold">GAMEHUB</Link>
                 </div>
 
                 {/* Desktop Menu */}
