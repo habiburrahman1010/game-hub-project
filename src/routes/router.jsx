@@ -9,6 +9,7 @@ import Register from '../pages/Register';
 import GameDetails from '../pages/GameDetails';
 import PrivetRoute from '../provider/PrivetRoute';
 import Loading from '../pages/Loading';
+import Error from '../pages/Error';
 
 const router =createBrowserRouter([
     {
@@ -53,7 +54,7 @@ const router =createBrowserRouter([
     },
     {
         path:'/*',
-        element:<h2>welcome error</h2>
+        element:<Error></Error>
     },
 
 ])
