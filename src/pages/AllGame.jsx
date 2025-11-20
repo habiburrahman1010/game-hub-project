@@ -4,7 +4,7 @@ import GameCard from '../components/GameCard';
 
 const AllGame = () => {
 
-    const games = useLoaderData(); // array of games
+    const games = useLoaderData(); 
 
     return (
       <div className='w-11/12 mx-auto' >

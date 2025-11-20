@@ -19,7 +19,6 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    setError("");
     googleLogin()
       .then(() => navigate("/"))
       .catch((error) => setError(error.message));
@@ -27,35 +26,42 @@ const Login = () => {
 
   return (
     <div className="card bg-base-100 w-full max-w-sm shadow-2xl m-auto my-8">
+
+      
       <div className="card-body">
         <form onSubmit={handleSubmit}>
-          <fieldset className="fieldset">
-            <label className="label">Email</label>
-            <input type="email" className="input input-bordered" name="email" placeholder="Email" />
+          <h2 className="font-bold text-2xl text-center py-4">Welcome to login</h2>
+          <label>Email</label>
+          <input
+            type="email"
+            className="input input-bordered"
+            name="email"
+            placeholder="Email"
+          />
 
-            <label className="label">Password</label>
-            <input type="password" className="input input-bordered" name="password" placeholder="Password" />
+          <label>Password</label>
+          <input
+            type="password"
+            className="input input-bordered"
+            name="password"
+            placeholder="Password"
+          />
 
-            <button className="btn btn-neutral mt-4 w-full">Login</button>
-          </fieldset>
+          <button className="btn btn-neutral mt-4 w-full ">Login</button>
         </form>
+
 
         <p className="mt-2 ">
           <Link
             to={`/auth/forgot-password?email=${encodeURIComponent(
               document.querySelector("input[name='email']")?.value || ""
             )}`}
-            className="text-blue-400 underline"
-          >
+            className="text-blue-400 underline" >
             Forgot Password?
           </Link>
         </p>
 
-
-
-        <button
-          onClick={handleGoogleLogin}
-          className="btn mt-3 w-full">
+        <button onClick={handleGoogleLogin} className="btn mt-3 w-full">
           Continue with Google
         </button>
 
@@ -63,7 +69,7 @@ const Login = () => {
 
         <p className="mt-4">
           Don't have an account?
-          <Link to="/auth/register" className="text-blue-400 underline"> Register</Link>
+          <Link to="/auth/register" className="text-blue-400"> Register</Link>
         </p>
       </div>
     </div>

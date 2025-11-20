@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BannerSlider from "../components/BannerSlider";
 import GameCard from "../components/GameCard";
+import NewsletterSection from "../components/NewsletterSection";
 
 const Home = () => {
   const [games, setGames] = useState([]);
@@ -9,7 +10,7 @@ const Home = () => {
     fetch("/game.json")
       .then((res) => res.json())
       .then((data) => {
-        // Sort by rating (highest → lowest)
+      
         const sorted = data.sort((a, b) => b.ratings - a.ratings);
         setGames(sorted);
       });
@@ -30,6 +31,8 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      <NewsletterSection></NewsletterSection>
     </div>
   );
 };

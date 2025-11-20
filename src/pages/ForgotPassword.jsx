@@ -27,7 +27,8 @@ const ForgotPassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
                 alert("Password reset email sent!");
-                window.location.href = "https://mail.google.com"; 
+                window.open("https://mail.google.com", "_blank");
+
             })
             .catch((error) => alert(error.message));
     };
