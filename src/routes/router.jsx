@@ -11,6 +11,7 @@ import PrivetRoute from '../provider/PrivetRoute';
 import Loading from '../pages/Loading';
 import Error from '../pages/Error';
 import Myprofile from '../pages/Myprofile';
+import ForgotPassword from '../pages/ForgotPassword';
 
 const router =createBrowserRouter([
     {
@@ -43,6 +44,10 @@ const router =createBrowserRouter([
                 path:"/auth/register",
                 element:<Register></Register>
             },
+            {
+                path:"/auth/forgot-password",
+                element:<ForgotPassword></ForgotPassword>
+            }
         ]
     },
      {

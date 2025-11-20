@@ -40,18 +40,29 @@ const Login = () => {
           </fieldset>
         </form>
 
-    
-        <button 
+        <p className="mt-2 ">
+          <Link
+            to={`/auth/forgot-password?email=${encodeURIComponent(
+              document.querySelector("input[name='email']")?.value || ""
+            )}`}
+            className="text-blue-400 underline"
+          >
+            Forgot Password?
+          </Link>
+        </p>
+
+
+
+        <button
           onClick={handleGoogleLogin}
-          className="btn mt-3 w-full"
-        >
+          className="btn mt-3 w-full">
           Continue with Google
         </button>
 
         {error && <p className="text-red-700 mt-2">{error}</p>}
 
         <p className="mt-4">
-          Don't have an account? 
+          Don't have an account?
           <Link to="/auth/register" className="text-blue-400 underline"> Register</Link>
         </p>
       </div>
